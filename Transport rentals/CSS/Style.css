@@ -1,0 +1,249 @@
+/* --- Global Reset & Base Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* --- Typography & Headings --- */
+h1, h2, h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #004d99;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    border-bottom: 3px solid #ffaa00;
+    padding-bottom: 5px;
+    margin-top: 1.5em;
+    color: #004d99;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: #004d99;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #0066cc;
+}
+
+nav li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav li a:hover {
+    background-color: #ffaa00;
+    color: #004d99;
+}
+
+/* --- Main Content Layout --- */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+/* -------------------------------------- */
+/* --- UPDATED IMAGE STYLES (FORCED HORIZONTAL) --- */
+/* -------------------------------------- */
+
+/* Style for the div containing the 3 images in each section */
+section div {
+    display: flex; /* Enables horizontal layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px; 
+    /* REMOVED: flex-wrap: wrap; */ /* This prevents stacking on small screens */
+    margin: 20px 0;
+    /* ADDED: Ensures the container doesn't overflow */
+    overflow-x: auto; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; 
+    border: 3px solid #004d99;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.02);
+}
+
+/* Specific style for images inside the new flex containers (3 per row) */
+section div img {
+    /* Set a fixed base size for the images */
+    width: 32%; /* Takes slightly less than 1/3 to allow for gap */
+    /* REMOVED: min-width: 250px; */ /* Removing this allows images to shrink to fit the line */
+    flex-shrink: 0; /* Prevents the images from shrinking too much */
+    margin: 0; 
+}
+
+/* Single image (like the map) styling */
+section address img {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* --- Lists and Tables (Details) --- */
+ul, ol {
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table caption {
+    caption-side: top;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #004d99;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* --- Form Styles --- */
+form {
+    background-color: #e6f0ff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #cce0ff;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #004d99;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form input[type="submit"] {
+    background-color: #ffaa00;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #cc8800;
+}
+
+/* --- Footer Styles --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer section {
+    flex-basis: 40%;
+    padding: 10px;
+    text-align: left;
+    min-width: 250px;
+}
+
+footer h3 {
+    color: #ffaa00;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 170, 0, 0.3);
+    padding-bottom: 5px;
+}
+
+footer a {
+    color: #cce0ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffaa00;
+    text-decoration: underline;
+}
+
+footer section ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
